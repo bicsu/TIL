@@ -1,18 +1,64 @@
+# telegram bot
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+### install
 
+- telegram 설치
 
-Hi there! Welcome to Cloud9 IDE!
+### bot init
 
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
+- @BotFather 검색
+- start 버튼클릭
+- /newbot 입력
+- 이름을 생성 => 중복가능
+- username => `bot`으로 끝나야하고 유니크한 값
+- `token`, `url`
+- url 클릭하여 봇 활성화
 
-Happy coding!
-The Cloud9 IDE team
+### telegram.py
+
+- user id 가져오기
+
+```
+import requests
+token = "봇의 토큰값"
+method_name = "getUpdates"
+url = 'https://api.telegram.org/bot{0}/{1}'.format(token,method_name)
+
+print(url)
+print(requests.get(url))
+```
+
+- 유저에게 메세지 보내기
+
+```
+import requests
+token = "763337042:AAEjq0JPofKKdu9_oYwVdi5O5L8JGz_xl6E"
+method_name = "getUpdates"
+url = 'https://api.telegram.org/bot{0}/{1}'.format(token,method_name)
+
+user_id = 'user_id'
+method_name = "sendmessage"
+msg = "안녕하세요!!!"
+msg_url = 'https://api.telegram.org/bot{0}/{1}?chat_id={2}&text={3}'.format(token,method_name,user_id,msg)
+print(msg_url)
+print(requests.get(msg_url))
+```
+
+- id 값을 json에서 가져와봅시다.
+
+```
+import requests
+token = "763337042:AAEjq0JPofKKdu9_oYwVdi5O5L8JGz_xl6E"
+method_name = "getUpdates"
+url = 'https://api.telegram.org/bot{0}/{1}'.format(token,method_name)
+update = requests.get(url).json()
+
+user_id = update["result"][0]['message']['from']['id']
+method_name = "sendmessage"
+msg = "안녕하세요!!!"
+msg_url = 'https://api.telegram.org/bot{0}/{1}?chat_id={2}&text={3}'.format(token,method_name,user_id,msg)
+# print(msg_url)
+# print(requests.get(msg_url))
+```
+
+- 코스피 정보 가져오기
