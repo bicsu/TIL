@@ -95,3 +95,19 @@ conda create -n <가상환경 이름> python=<python version, ex)3.6>
     $ source activate py27
     $ conda install notebook ipykernel`
 
+#### 5. 
+
+ubuntu  
+
+```shell
+$ sudo apt-get install fcitx-hangul # 한글 세팅 → setting가서 ‘Hangul’로 수정
+
+$ cd pycharm # 폴더 이동
+
+$ ./pycharm.sh  # 설치
+
+```
+
+```vim ~/.bashrc```
+
+```export PATH="/home/pirl/anaconda3/bin:$PATH```# 환경 변수 지정하기
