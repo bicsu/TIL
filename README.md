@@ -76,31 +76,40 @@ conda create -n <가상환경 이름> python=<python version, ex)3.6>
 ```
 
 * 가상환경 생성 위치: ~/anaconda3/envs/py35
+
 * 가상환경 목록: $ conda info --envs
+
+* ```vim ~/.bashrc```
+
+  ```export PATH="/home/pirl/anaconda3/bin:$PATH```# 환경 변수 지정하기
+
 * 콘다 내부의 패키지 리스트
   ```$ conda list 또는 conda list -n py35```
+
 * 패키지 설치 (conda install package_name)
   `$ conda install python=2.7
   $ conda install scipy=0.15.0 curl -n py27
   $ conda install pandas`
+
 * 패키지 업데이트
   ` conda update package_name`
+
 * 패키지 삭제
   `$ conda remove -n py27 package_name`
+
 * 가상환경 삭제
   `$ conda remove -n py27 --all`
+
 * 7다중 커널 설치
   - Python2 를 추가
     `$ conda create -n py27 python=2.7
     $ source activate py27
     $ conda install notebook ipykernel`
 
-#### 5. 
-
-ubuntu  
+#### 5. ubuntu  한글 설정
 
 ```shell
-$ sudo apt-get install fcitx-hangul # 한글 세팅 → setting가서 ‘Hangul’로 수정
+$ sudo apt-get install fcitx-hangul # 한글 세팅 → setting가서 ‘Hangul’로 수정(재부팅)
 
 $ cd pycharm # 폴더 이동
 
@@ -108,6 +117,23 @@ $ ./pycharm.sh  # 설치
 
 ```
 
-```vim ~/.bashrc```
+#### 6. ubuntu putty설정
 
-```export PATH="/home/pirl/anaconda3/bin:$PATH```# 환경 변수 지정하기
+```shell
+$ dpkg -l | grep openssh
+$ sudo apt-get update
+$ sudo apt-get install openssh-server
+$ dpkg -l | grep openssh #정상 설치 확인(openssh-server, openssh-sftp-server)
+$ sudo service ssh start
+$ service --status-all | grep + #여기에 ssh가 있으면 된 것
+$ sudo netstat -antp # SSH 서비스가 몇 번 포트를 점유하고 있는지도 확인
+$ 
+```
+
+#### 7. ubuntu 16.04 root 및 유저 변경
+
+```shell
+$ sudo so
+$ su - <유저명 예)pirl>
+```
+
