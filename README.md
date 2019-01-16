@@ -69,3 +69,29 @@ passwd()
 
 
 
+#### 4. anaconda 가상환경 활성화
+
+```shell
+conda create -n <가상환경 이름> python=<python version, ex)3.6>
+```
+
+* 가상환경 생성 위치: ~/anaconda3/envs/py35
+* 가상환경 목록: $ conda info --envs
+* 콘다 내부의 패키지 리스트
+  ```$ conda list 또는 conda list -n py35```
+* 패키지 설치 (conda install package_name)
+  `$ conda install python=2.7
+  $ conda install scipy=0.15.0 curl -n py27
+  $ conda install pandas`
+* 패키지 업데이트
+  ` conda update package_name`
+* 패키지 삭제
+  `$ conda remove -n py27 package_name`
+* 가상환경 삭제
+  `$ conda remove -n py27 --all`
+* 7다중 커널 설치
+  - Python2 를 추가
+    `$ conda create -n py27 python=2.7
+    $ source activate py27
+    $ conda install notebook ipykernel`
+
