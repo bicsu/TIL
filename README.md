@@ -133,7 +133,7 @@ $
 #### 7. ubuntu 16.04 root 및 유저 변경
 
 ```shell
-$ sudo so
+$ sudo su
 $ su - <유저명 예)pirl>
 ```
 
