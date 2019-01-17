@@ -137,3 +137,9 @@ $ sudo su
 $ su - <유저명 예)pirl>
 ```
 
+#### 8. pandas e 멱수 없애기 
+
+```python
+pd.set_option('display.float_format', lambda x: '%.3f' % x)	
+```
+
