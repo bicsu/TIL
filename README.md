@@ -8,10 +8,7 @@ import time
 start_vect=time.time()
 
 # Your codes!!!!!!!!!!!!!!!!!!!!!!!
-
 print("training Runtime: %0.2f Minutes"%((time.time() - start_vect)/60))
-
-
 ```
 
 
@@ -64,8 +61,6 @@ passwd()
 ```shell
 		$ chrome <url 이름> 으로 바로 web으로 이동 가능
 ```
-
-
 
 
 
@@ -134,12 +129,50 @@ $
 
 ```shell
 $ sudo su
-$ su - <유저명 예)pirl>
+$ su - <유저명 예)sam>
 ```
 
-#### 8. pandas e 멱수 없애기 
+#### 8. pandas TIPs 
 
 ```python
 pd.set_option('display.float_format', lambda x: '%.3f' % x)	
+# set the options to see all columns, rows
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+```
+
+#### 9. Python으로 메일 보내기
+
+```python
+import smtplib
+smtp_gmail = smtplib.SMTP('smtp.gmail.com', 587)
+# 서버 연결을 설정하는 단계
+smtp_gmail.ehlo()
+# 연결을 암호화
+smtp_gmail.starttls()
+#로그인
+smtp_gmail.login('<yourID>@gmail.com','<password>')
+from email.message import EmailMessage
+msg=EmailMessage()
+ 
+# 제목 입력
+msg['Subject']="test합친거csv임니다"
+ 
+# 내용 입력
+msg.set_content("test합친거입니다.")
+ 
+# 보내는 사람
+msg['From']='sender@naver.com'
+ 
+# 받는 사람
+msg['To']='reciever@naver.com'
+# 보내기
+file='./csv/abc.csv'
+fp = open(file,'rb')
+file_data=fp.read()
+msg.add_attachment(file_data,maintype='text',subtype='plain',filename="abcd.csv")
+smtp_gmail.send_message(msg) # 실질적 보내기
+
 ```
 
