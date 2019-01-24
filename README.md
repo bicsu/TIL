@@ -101,7 +101,7 @@ conda create -n <가상환경 이름> python=<python version, ex)3.6>
     $ source activate py27
     $ conda install notebook ipykernel`
 
-#### 5. ubuntu  한글 설정
+#### 5. ubuntu  이런저런 설정
 
 ```shell
 $ sudo apt-get install fcitx-hangul # 한글 세팅 → setting가서 ‘Hangul’로 수정(재부팅)
@@ -109,7 +109,9 @@ $ sudo apt-get install fcitx-hangul # 한글 세팅 → setting가서 ‘Hangul�
 $ cd pycharm # 폴더 이동
 
 $ ./pycharm.sh  # 설치
-
+# 파일 지우기
+$ dpkg --list #파일명 찾기 ex) avg.ext
+$ sudo apt-get --purge remove <program name>
 ```
 
 #### 6. ubuntu putty설정

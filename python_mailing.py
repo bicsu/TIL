@@ -1,6 +1,5 @@
 ### Python으로 메일 보내기
 
-```python
 import smtplib
 smtp_gmail = smtplib.SMTP('smtp.gmail.com', 587)
 # 서버 연결을 설정하는 단계
@@ -31,5 +30,4 @@ msg.add_attachment(file_data,maintype='text',subtype='plain',filename="abcd.csv"
 smtp_gmail.send_message(msg) # 실질적 보내기
 
 #에러가 날 시에 구글링 ㄱㄱ port를 바꾸거나, google 계정 보안 낮추기
-```
 
