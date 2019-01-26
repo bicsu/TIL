@@ -142,6 +142,7 @@ pd.set_option('display.float_format', lambda x: '%.3f' % x)
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
+pd.set_option('max_info_columns', 1001)
 ```
 
 #### 9. Python으로 메일 보내기
