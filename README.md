@@ -97,8 +97,8 @@ conda create -n <가상환경 이름> python=<python version, ex)3.6>
 
 * 7다중 커널 설치
   - Python2 를 추가
-    `$ conda create -n py27 python=2.7
-    $ source activate py27
+    `$ conda create -n py27 python=2.7   
+    $ source activate py27   
     $ conda install notebook ipykernel`
 
 #### 5. ubuntu  이런저런 설정
@@ -178,4 +178,17 @@ msg.add_attachment(file_data,maintype='text',subtype='plain',filename="abcd.csv"
 smtp_gmail.send_message(msg) # 실질적 보내기
 
 ```
+
+#### 10. Tensorflow 설치(Ubuntu)
+
+```shell
+# in System
+$ pip3 install --user --upgrade tensorflow
+# in VIRTUALENV
+$ pip install --upgrade tensorflow
+```
+
+
+
+
 
