@@ -9,6 +9,11 @@ start_vect=time.time()
 
 # Your codes!!!!!!!!!!!!!!!!!!!!!!!
 print("training Runtime: %0.2f Minutes"%((time.time() - start_vect)/60))
+
+
+
+from datetime import datetime
+print(datetime.today())        
 ```
 
 
