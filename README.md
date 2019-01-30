@@ -4,15 +4,12 @@
 
 ```python
 import time
-
+from datetime import datetime
 start_vect=time.time()
 
 # Your codes!!!!!!!!!!!!!!!!!!!!!!!
+
 print("training Runtime: %0.2f Minutes"%((time.time() - start_vect)/60))
-
-
-
-from datetime import datetime
 print(datetime.today())        
 ```
 
@@ -105,6 +102,14 @@ conda create -n <가상환경 이름> python=<python version, ex)3.6>
     `$ conda create -n py27 python=2.7   
     $ source activate py27   
     $ conda install notebook ipykernel`
+
+###### Jupyter virtualenv 추가 및 삭제
+
+```shell
+## virtualenv 안에서
+(py36) $ pythom -m ipykernel --user --name py36 #jupyter kernel에 추가
+(py36) $ jupyter kernelspec uninstall py36 # jupyter kernel에 삭제
+```
 
 #### 5. ubuntu  이런저런 설정
 
