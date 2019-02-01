@@ -23,3 +23,24 @@ plt.title('Distribution of log_price by waterfront')
 ```
 
 ![1548722592144](/home/pirl/.config/Typora/typora-user-images/1548722592144.png)
+
+#### 3. plt label size & font 조절
+
+```python
+plt.rc('ytick',labelsize=15)
+# To use 한글 font in graphs
+plt.rc('font', family='NanumBarunGothic')
+plt.rcParams['axes.unicode_minus']=False
+```
+
+
+
+#### 4. distplot에서 정규분포 확인하기
+
+```python
+from scipy.stats import norm
+sns.distplot(df["LSTAT"], fit=norm) #fit = norm을 추가
+```
+
+![1548910962498](/home/pirl/.config/Typora/typora-user-images/1548910962498.png)
+
