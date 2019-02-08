@@ -202,5 +202,14 @@ $ pip install --upgrade tensorflow
 
 
 
+#### 11 .Ubuntu PSCP이용해 파일 전송 windows to Unbuntu
+
+```shell
+# 윈도우 자기가 원하는 folder에서
+C:\directionyouwant>pscp -r -P <port> C:\yourfolder/* <username>@<ip or hostname>:/home/user/
+# -r은 모든 폴더 및 파일 -P로 port를 명시화해서 잘 찾아갈 수 있게
+# 위 명령어가 작동하면 ubunutu password를 입력하게 되고 그 후에 파일이 복사 된다.
+```
+
 
 
