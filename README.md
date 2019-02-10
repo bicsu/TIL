@@ -161,7 +161,8 @@ warnings.filterwarnings('ignore')
 
 ```python
 import smtplib
-smtp_gmail = smtplib.SMTP('smtp.gmail.com', 587)
+smtp_gmail = smtp
+lib.SMTP('smtp.gmail.com', 587)
 # 서버 연결을 설정하는 단계
 smtp_gmail.ehlo()
 # 연결을 암호화
@@ -212,4 +213,10 @@ C:\directionyouwant>pscp -r -P <port> C:\yourfolder/* <username>@<ip or hostname
 ```
 
 
+
+#### 12 .Ubuntu의 그림판 kolourpaint설치
+
+```shell
+$ sudo apt-get install kolourpaint4
+```
 
