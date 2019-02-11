@@ -44,3 +44,21 @@ sns.distplot(df["LSTAT"], fit=norm) #fit = norm을 추가
 
 ![1548910962498](/home/pirl/.config/Typora/typora-user-images/1548910962498.png)
 
+#### 5. Feature Importance Visualization
+
+```python
+def plot_feature_importances(model):
+    cols = X.columns
+    importances = model.feature_importances_
+    indices = np.argsort(model.feature_importances_)
+    plt.barh(range(len(indices)), importances[indices], align="center", color='r')
+    plt.yticks(range(len(indices)), [cols[i] for i in indices])
+    plt.xlabel("설명변수 중요도")
+    plt.ylabel('설명변수')
+    plt.ylim(-1, len(cols))
+
+# 설명 변수 중요도 그래프 함수 실행
+plt.figure(figsize=(10,8))
+plot_feature_importances(<모델명>)
+```
+

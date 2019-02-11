@@ -26,5 +26,20 @@ pair_corr = pair_corr[pair_corr['relation']!=1]
 pair_corr[abs(pair_corr['relation']) >= 0.8]
 ```
 
-### 
+#### 3. label encoding function
+
+```python
+from sklearn.preprocessing import LabelEncoder
+
+object_cols = data.select_dtypes(include=['object']).columns.tolist()
+
+def MultiLabelEncoder(columnlist,dataframe):
+    for i in columnlist:
+        le=LabelEncoder()
+        dataframe[i] = le.fit_transform(dataframe[i])
+
+MultiLabelEncoder(object_cols, data)
+```
+
+
 
