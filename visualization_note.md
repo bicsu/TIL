@@ -62,3 +62,26 @@ plt.figure(figsize=(10,8))
 plot_feature_importances(<모델명>)
 ```
 
+#### 6. ROC Curve
+
+```python
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import roc_curve, roc_auc_score
+from matplotlib import pyplot as plt
+
+model = DecisionTreeClassifier()
+model.fit(X_train, y_train)
+predictions = tree.predict_proba(X_test)
+
+print roc_auc_score(y_test, predict_proba[:,1])
+
+fpr, tpr, _ = roc_curve(y_test, predictions[:,1])
+
+plt.clf()
+plot.plot(fpr, tpr)
+plt.xlabel('FPR')
+plt.ylabel('TPR')
+plt.title('ROC curve')
+plt.show()
+```
+
