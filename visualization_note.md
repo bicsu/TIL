@@ -10,7 +10,7 @@ plt.title('Variable Correlation')
 # from : https://www.kaggle.com/stephaniestallworth/melbourne-housing-market-eda-and-regression
 ```
 
-### 2. Binary variable visualization
+#### 2. Binary variable visualization
 
 A binary variable, we can see the distribtution of housing pric is quite different for the two groups. So it is likely to be a good predictor.
 
@@ -85,3 +85,6 @@ plt.title('ROC curve')
 plt.show()
 ```
 
+#### 7. Scatter plot with continuous hue
+
+https://stackoverflow.com/questions/44641669/scatterplot-with-point-colors-representing-a-continuous-variable-in-seaborn-face
