@@ -133,3 +133,19 @@ plt.ylabel("sample index")
 # plt.subplots_adjust(hspace = 0.3)
 ```
 
+#### several scatter plot with for loop
+
+```python
+num_col = list(plot_data.columns)
+rows = len(num_col)-2
+
+fig, axs = plt.subplots(rows, 1, figsize=(6,30))
+fig.subplots_adjust(hspace = 0.23)
+axs = axs.ravel()
+for j,k in enumerate(num_col[2:]):
+    b = sns.scatterplot(x='Prin1',y = k, data=plot_data,ax = axs[j],hue='diagnosis')
+    b.set_ylabel(k,fontsize=10)
+    b.set_title('Prin1 vs'+ ' '+ k,fontsize=15, color='r')
+```
+
+![1550039633000](/home/pirl/.config/Typora/typora-user-images/1550039633000.png)
