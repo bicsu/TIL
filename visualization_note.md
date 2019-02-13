@@ -162,4 +162,4 @@ plt.annotate('local max', xy=(6, ymax), xytext=(7, ymax+0.001),
             )
 ```
 
-![highestpoint_annotation](/home/pirl/Downloads/ken/TIL/highestpoint_annotation.png)
+![highestpoint_annotation](https://github.com/bicsu/TIL/blob/master/highestpoint_annotation.png?raw=true)
