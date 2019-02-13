@@ -149,3 +149,17 @@ for j,k in enumerate(num_col[2:]):
 ```
 
 ![scatters](/home/pirl/Pictures/scatters.png)
+
+#### Plot 그리고 최고 점에 annotation하기
+
+```python
+plt.figure(figsize=(10,10))
+plt.plot(ds_neighbors.set_index("Neighbors"), color='r')
+plt.xticks(np.array(ds_neighbors['Neighbors']));
+ymax = max(ds_neighbors['TestAccuracy'])
+plt.annotate('local max', xy=(6, ymax), xytext=(7, ymax+0.001),
+            arrowprops=dict(facecolor='black', shrink=0.005),
+            )
+```
+
+![highestpoint_annotation](/home/pirl/Downloads/ken/TIL/highestpoint_annotation.png)
