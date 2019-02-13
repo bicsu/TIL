@@ -88,3 +88,48 @@ plt.show()
 #### 7. Scatter plot with continuous hue
 
 https://stackoverflow.com/questions/44641669/scatterplot-with-point-colors-representing-a-continuous-variable-in-seaborn-face
+
+#### 8. for loop box plot
+
+```python
+rows = 4
+if((((len(num_col) + 1) // rows) % rows) == 0): 
+    cols = (len(num_col)+1) // rows
+else:
+    cols = ((len(num_col)+1) // rows) + ((len(num_col) // rows) % rows)
+
+fig, axs = plt.subplots(rows, cols, figsize=(20,20))
+fig.subplots_adjust(hspace = 0.05, wspace=0.3)
+axs = axs.ravel()
+for j,k in enumerate(num_col):
+    b = sns.boxplot(y = k, data=raw_data,ax = axs[j],)
+    b.set_ylabel(k,fontsize=20)
+
+```
+
+#### subplot example
+
+```python
+Z_ward = linkage(x, method='ward', metric='euclidean')
+Z_average = linkage(x, method='average', metric='euclidean')
+Z_Minkowski = linkage(x, method='average', metric='minkowski')
+
+plt.figure(figsize = (10,20))
+ax = plt.subplot(311)
+dendrogram(Z_ward, leaf_font_size=10, orientation='right')
+plt.title("Hierarchical Clustering Dendrogram")
+plt.xlabel("distance")
+plt.ylabel("sample index")
+ax = plt.subplot(312)
+dendrogram(Z_average, leaf_font_size=10, orientation='right')
+plt.title("Hierarchical Clustering Dendrogram")
+plt.xlabel("distance")
+plt.ylabel("sample index")
+ax = plt.subplot(313)
+dendrogram(Z_Minkowski, leaf_font_size=10, orientation='right')
+plt.title("Hierarchical Clustering Dendrogram")
+plt.xlabel("distance")
+plt.ylabel("sample index")
+# plt.subplots_adjust(hspace = 0.3)
+```
+
