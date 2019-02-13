@@ -148,4 +148,4 @@ for j,k in enumerate(num_col[2:]):
     b.set_title('Prin1 vs'+ ' '+ k,fontsize=15, color='r')
 ```
 
-![1550039633000](/home/pirl/.config/Typora/typora-user-images/1550039633000.png)
+![scatters](/home/pirl/Pictures/scatters.png)
