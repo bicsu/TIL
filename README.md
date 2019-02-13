@@ -220,3 +220,12 @@ C:\directionyouwant>pscp -r -P <port> C:\yourfolder/* <username>@<ip or hostname
 $ sudo apt-get install kolourpaint4
 ```
 
+#### 13. Github markdown에 image 추가하기
+
+```markdown
+![Image description](link-to-image) 
+* 이미지를 해당 repo에 올려서 address를 얻는다
+```
+
+
+
