@@ -44,3 +44,11 @@ MultiLabelEncoder(object_cols, data)
 #### 4. Handling Missing Values
 
 <url> https://rfriend.tistory.com/262</url>
+
+#### 5. NaN있는 관측치 dataframe으로 가져와서 보기
+
+```python
+df[np.isnan(df.Col2)]
+df2 = df[df[['col']].isnull().any(axis=1)]
+```
+
