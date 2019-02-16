@@ -27,7 +27,7 @@ plt.title('Distribution of log_price by waterfront')
 #### 3. plt label size & font 조절
 
 ```python
-plt.rc('ytick',labelsize=15)
+--plt.rc('ytick',labelsize=15)
 # To use 한글 font in graphs
 plt.rc('font', family='NanumBarunGothic')
 plt.rcParams['axes.unicode_minus']=False
