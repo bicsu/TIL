@@ -52,3 +52,9 @@ df[np.isnan(df.Col2)]
 df2 = df[df[['col']].isnull().any(axis=1)]
 ```
 
+#### 6. describe data형태별로 보기
+
+```python
+df.describe(include=[np.number]) #np.object
+```
+
