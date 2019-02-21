@@ -50,11 +50,36 @@ MultiLabelEncoder(object_cols, data)
 ```python
 df[np.isnan(df.Col2)]
 df2 = df[df[['col']].isnull().any(axis=1)]
+# missing data percentage 구하기
+def get_percentage_missing(series):
+    num = series.isnull().sum()
+    den = len(series)
+    return (num/den * 100)
+
+#특정 column Nan값의 관측치만 dropna하기
+train = train.dropna(subset=['room_count', 'bathroom_count'], how='all')
 ```
 
 #### 6. describe data형태별로 보기
 
 ```python
 df.describe(include=[np.number]) #np.object
+```
+
+#### 7. Pandas datetime method 활용
+
+```python
+df['date'] = pd.to_datetime(df['date'])
+df['date'].dt.weekday_name
+df['date'].dt.month
+df['date'].dt.day
+```
+
+#### 8. loc 활용
+
+```python
+#
+data.loc[data['시력(우)'] > 9, '시력(우)'] = data['시력(좌)']
+
 ```
 

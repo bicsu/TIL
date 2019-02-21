@@ -105,6 +105,8 @@ for j,k in enumerate(num_col):
     b = sns.boxplot(y = k, data=raw_data,ax = axs[j],)
     b.set_ylabel(k,fontsize=20)
 
+# grid ratio adjusting in subplot
+fig, axs = plt.subplots(rows, cols, figsize=(20,20),girdspec_kw = {'width_ratio':[1,3]})
 ```
 
 #### subplot example
@@ -163,3 +165,15 @@ plt.annotate('local max', xy=(6, ymax), xytext=(7, ymax+0.001),
 ```
 
 ![highestpoint_annotation](https://github.com/bicsu/TIL/blob/master/highestpoint_annotation.png?raw=true)
+
+그래프 한글 관련 옵션
+
+```python
+# 그래프의 한글을 더욱 선명하게 출력
+from Ipython.display import set_matplotlib_formats
+set_matplotlib_formats('retina')
+
+#그래프에서 음수값이 나올 때, 깨지는 현상 방지
+mpl.rc('axes', unicode_minus = False)
+```
+
