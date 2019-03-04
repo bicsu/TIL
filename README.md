@@ -107,7 +107,7 @@ conda create -n <가상환경 이름> python=<python version, ex)3.6>
 
 ```shell
 ## virtualenv 안에서
-(py36) $ pythom -m ipykernel --user --name py36 #jupyter kernel에 추가
+(py36) $ ipykernel --user --name py36 #jupyter kernel에 추가
 (py36) $ jupyter kernelspec uninstall py36 # jupyter kernel에 삭제
 ```
 
