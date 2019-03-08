@@ -107,7 +107,7 @@ conda create -n <가상환경 이름> python=<python version, ex)3.6>
 
 ```shell
 ## virtualenv 안에서
-(py36) $ ipykernel --user --name py36 #jupyter kernel에 추가
+(py36) $ ipython kernel --user --name py36 #jupyter kernel에 추가
 (py36) $ jupyter kernelspec uninstall py36 # jupyter kernel에 삭제
 ```
 
@@ -227,5 +227,9 @@ $ sudo apt-get install kolourpaint4
 * 이미지를 해당 repo에 올려서 address를 얻는다
 ```
 
+#### 14. pip install 안될 때 가상환경에 직접 설치
 
+```shell
+pip install --target=/home/pirl/anaconda3/envs/tf/lib/python3.6/site-packages --upgrade pillow
+```
 
