@@ -230,6 +230,16 @@ $ sudo apt-get install kolourpaint4
 #### 14. pip install 안될 때 가상환경에 직접 설치
 
 ```shell
-pip install --target=/home/pirl/anaconda3/envs/tf/lib/python3.6/site-packages --upgrade pillow
+$ pip install --target=/home/pirl/anaconda3/envs/tf/lib/python3.6/site-packages --upgrade pillow
+$ conda install mysql-connector-python --name VENV_NAME
+$ conda update mysql-connector-python --name VENV_NAME
+```
+
+#### 15. Ubuntu GUI folder 자세히보기로 변경
+
+```shell
+# Ubuntu16.04 folder detailed_view <'icon-view' and 'compact-view'>
+$ gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+
 ```
 
