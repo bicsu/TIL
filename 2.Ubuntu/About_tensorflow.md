@@ -24,7 +24,7 @@ env 리스트 보기
 $ conda env list
 
 env 활성화
-$ activate tf
+$ activate tfc
 
 env 비활성화
 $ deactivate
