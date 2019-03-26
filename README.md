@@ -17,6 +17,8 @@ print(datetime.today())
 
 #### 2. putty jupyter notebook
 
+= 아래 6번에서 ssh설정을 먼저 해주시고 진행해주세요!!
+
 - jupyter notebook --generate-config
 
 ```python
