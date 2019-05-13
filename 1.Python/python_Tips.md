@@ -83,3 +83,29 @@ data.loc[data['시력(우)'] > 9, '시력(우)'] = data['시력(좌)']
 
 ```
 
+#### 9. str.split & expanding columns with renaming
+
+```python
+df['string'].str.split(',', expand=True).rename(columns = lambda x: "string"+str(x+1))
+
+concat(sort=False, axis = 0)
+```
+
+#### 10. 시계열 분석(Seasonal ARIMA)
+
+```python
+from pyramid.arima import auto_arima
+stepwise_model = auto_arima(data, start_p=1, start_q=1,
+                           max_p=3, max_q=3, m=12,
+                           start_P=0, seasonal=True,
+                           d=1, D=1, trace=True,
+                           error_action='ignore',  
+                           suppress_warnings=True, 
+                           stepwise=True)
+print(stepwise_model.aic())
+```
+
+<https://medium.com/@josemarcialportilla/using-python-and-auto-arima-to-forecast-seasonal-time-series-90877adff03c>
+
+
+

@@ -245,3 +245,53 @@ $ gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
 
 ```
 
+#### 16. Excel 창분리
+
+```
+Excel 파일을 각각의 프로세스에서 실행하는 방법
+a. 윈도우 시작 버튼을 클릭합니다. 
+b. 검색 및 실행 창에 [regedit]를 입력합니다.
+이미지
+
+c. 레지스트리 편집기가 실행되면, 해당 폴더로 이동합니다.
+(HKey_Classes_Root\Excel.Sheet.8\Shell\Open)
+(HKey_Classes_Root\Excel.Sheet.12\Shell\Open) 
+d. 해당 폴더를 선택한 후 마우스 우측 버튼을 클릭하여, [내보내기]를 통해서 레지스트리를 백업합니다.
+(추후에 다른 문제가 발생할 경우 백업한 레지스트리를 실행하면, 기존 레지스트리 값이 재 등록됩니다.)
+이미지
+
+e. 백업이 완료되면, 다시 마우스 우측 버튼을 클릭하여, [삭제]를 통해서 레지스트리를 제거합니다.
+이미지
+
+f. 레지스트리 편집기를 종료하고, 바탕화면에서 마우스 우측 버튼을 클릭하여, [새로 만들기]의 [텍스트 문서]를 선택합니다.
+이미지
+
+g. 새로운 텍스트 문서를 2개 만들고 그 내용에 각가 아래 내용을 입력합니다.
+----------------------------------------------------------------------------------------------------------
+
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Excel.Sheet.12\shell\Open]
+@="열기(&O)"
+
+[HKEY_CLASSES_ROOT\Excel.Sheet.12\shell\Open\command]
+@="\"C:\\Program Files\\Microsoft Office\\Office14\\EXCEL.EXE\" /m \"%1\""
+
+-----------------------------------------------------------------------------------------
+
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Excel.Sheet.8\shell\Open]
+@="열기(&O)"
+
+[HKEY_CLASSES_ROOT\Excel.Sheet.8\shell\Open\command]
+@="\"C:\\Program Files\\Microsoft Office\\Office14\\EXCEL.EXE\" /m \"%1\""
+
+-----------------------------------------------------------------------------------------
+
+h.위 내용들을 입력한 후 확장자명을 *.txt에서 [*.reg]로 변경한 후 실행합니다. 
+j. 새로 등록한 레지스트리 키값이 입력이 되면, Excel 프로그램을 실행하여 확인합니다.
+
+from : https://answers.microsoft.com/ko-kr/office/forum/office_2010-excel/office-2010%EC%97%90%EC%84%9C/b5f473a9-f061-4097-9192-76be7031f24d
+```
+
