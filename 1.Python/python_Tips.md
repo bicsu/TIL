@@ -109,3 +109,17 @@ print(stepwise_model.aic())
 
 
 
+#### 11. Text Cleansing 
+
+```python
+def cleanText(readData):
+    #텍스트에 포함되어 있는 특수 문자 제거
+    text = re.sub('[-=+,#/\?:^$.@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'…》]', '', readData)
+    return text
+
+# string에 숫자가 있는지 확인
+def hasNumbers(inputString):
+	return any(char.isdigit() for char in inputString)
+
+```
+

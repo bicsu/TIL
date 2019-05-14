@@ -292,6 +292,7 @@ Windows Registry Editor Version 5.00
 h.위 내용들을 입력한 후 확장자명을 *.txt에서 [*.reg]로 변경한 후 실행합니다. 
 j. 새로 등록한 레지스트리 키값이 입력이 되면, Excel 프로그램을 실행하여 확인합니다.
 
-from : https://answers.microsoft.com/ko-kr/office/forum/office_2010-excel/office-2010%EC%97%90%EC%84%9C/b5f473a9-f061-4097-9192-76be7031f24d
+
 ```
 
+from : https://answers.microsoft.com/ko-kr/office/forum/office_2010-excel/office-2010%EC%97%90%EC%84%9C/b5f473a9-f061-4097-9192-76be7031f24d
