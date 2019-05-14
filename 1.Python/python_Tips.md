@@ -123,3 +123,114 @@ def hasNumbers(inputString):
 
 ```
 
+#### 12. pandas apply 활용
+
+```python
+# 두 string 컬럼을 apply를 사용해서 combine하기
+dataa['c'] = dataa[['a', 'b']].apply(lambda x: '|'.join(x), axis=1)
+```
+
+
+
+#### 13. pandas Dataframe for문 train과 test한번에 돌리기
+
+```python
+for df in [df_train,df_test]:
+    df['date'] = df['date'].apply(lambda x: x[0:8])
+    df['yr_renovated'] = df['yr_renovated'].apply(lambda x: np.nan if x == 0 else x)
+    
+```
+
+#### 14. Unique 개수 계산 후 시각화
+
+```python
+### 유니크 갯수 계산
+train_unique = []
+columns = ['bedrooms','bathrooms','floors','waterfront','view','condition','grade']
+
+for i in columns:
+    train_unique.append(len(df_train[i].unique()))
+unique_train = pd.DataFrame()
+unique_train['Columns'] = columns
+unique_train['Unique_value'] = train_unique
+# plt.figure(figsize=(10,5))
+# sns.barplot(x = 'Columns', y = 'Unique_value', data = unique_train)
+# plt.tight_layout()
+data = [
+    go.Bar(
+        x = unique_train['Columns'],
+        y = unique_train['Unique_value'],
+        name = 'Unique value in features',
+        textfont=dict(size=20),
+        marker=dict(
+        line=dict(
+            color= generate_color(),
+            #width= 2,
+        ), opacity = 0.45
+    )
+    ),
+    ]
+layout= go.Layout(
+        title= "Unique Value By Column",
+        xaxis= dict(title='Columns', ticklen=5, zeroline=False, gridwidth=2),
+        yaxis= dict(title='Value Count', ticklen=5, gridwidth=2),
+        showlegend=True
+    )
+fig = go.Figure(data=data, layout=layout)
+py.iplot(fig, filename='skin')
+```
+
+#### 15. 결측치 확인 시각화
+
+```python
+from plotly import tools
+import plotly.offline as py
+py.init_notebook_mode(connected=True)
+import plotly.graph_objs as go
+
+from sklearn import model_selection, preprocessing, metrics, ensemble, naive_bayes, linear_model
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from sklearn.decomposition import TruncatedSVD
+
+pd.options.mode.chained_assignment = None
+pd.options.display.max_columns = 999
+
+import plotly.graph_objs as go
+
+import time
+import random
+
+#https://www.kaggle.com/ashishpatel26/bird-eye-view-of-two-sigma-nn-approach
+def mis_value_graph(data):  
+    data = [
+    go.Bar(
+        x = data.columns,
+        y = data.isnull().sum(),
+        name = 'Counts of Missing value',
+        textfont=dict(size=20),
+        marker=dict(
+        line=dict(
+            color= generate_color(),
+            #width= 2,
+        ), opacity = 0.45
+    )
+    ),
+    ]
+    layout= go.Layout(
+        title= '"Total Missing Value By Column"',
+        xaxis= dict(title='Columns', ticklen=5, zeroline=False, gridwidth=2),
+        yaxis= dict(title='Value Count', ticklen=5, gridwidth=2),
+        showlegend=True
+    )
+    fig = go.Figure(data=data, layout=layout)
+    py.iplot(fig, filename='skin')
+    
+def generate_color():
+    color = '#{:02x}{:02x}{:02x}'.format(*map(lambda x: random.randint(0, 255), range(3)))
+    return color
+
+df_all = pd.concat([df_train, df_test])
+del df_all['price']
+mis_value_graph(df_all)
+```
+
