@@ -104,6 +104,9 @@ conda create -n <가상환경 이름> python=<python version, ex)3.6>
     `$ conda create -n py27 python=2.7   
     $ source activate py27   
     $ conda install notebook ipykernel`
+  
+* `jupyter notebook --generate-config`
+  ` c.NotebookApp.notebook_dir = ' ' `
 
 ###### Jupyter virtualenv 추가 및 삭제
 
