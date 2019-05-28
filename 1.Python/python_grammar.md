@@ -16,3 +16,10 @@ def cleanText(data):
 
 ```
 
+### python 
+
+```python
+for i, j in zip(list, list[1:]):
+    d = i + j # list 앞 뒤 원소 접근해서 사용할 수 있어서 꿀
+```
+
