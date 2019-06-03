@@ -177,3 +177,11 @@ set_matplotlib_formats('retina')
 mpl.rc('axes', unicode_minus = False)
 ```
 
+#### Time series 데이터 dateindex로 lineplot 그리기
+
+````python
+plt.figure(figsize=(15,8))
+sns.lineplot(x = resamples.index, y = 'item_price', data = resamples )
+plt.tight_layout()
+````
+
