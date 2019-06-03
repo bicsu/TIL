@@ -135,6 +135,14 @@ plt.ylabel("sample index")
 # plt.subplots_adjust(hspace = 0.3)
 ```
 
+#### Box Plot Simple Example
+
+```python
+fig, axs = plt.subplots(2, 1, figsize=(10,10))
+sns.lineplot(x = resamples_m.index, y = 'item_price', data = resamples_m,ax = axs[0] )
+sns.lineplot(x = resamples_m.index, y = 'item_cnt_day', data = resamples_m, ax = axs[1])
+```
+
 #### several scatter plot with for loop
 
 ```python
