@@ -100,9 +100,9 @@ conda create -n <가상환경 이름> python=<python version, ex)3.6>
   `$ conda remove -n py27 --all`
 
 * 7다중 커널 설치
-  - Python2 를 추가
-    `$ conda create -n py27 python=2.7   
-    $ source activate py27   
+  - Python2 를 추가   
+    `$ conda create -n py27 python=2.7      
+    $ source activate py27      
     $ conda install notebook ipykernel`
   
 * `jupyter notebook --generate-config`
@@ -112,7 +112,10 @@ conda create -n <가상환경 이름> python=<python version, ex)3.6>
 
 ```shell
 ## virtualenv 안에서
+
 (py36) $ ipython kernel --user --name py36 #jupyter kernel에 추가
+## window
+$ python -m #을 붙여야함
 (py36) $ jupyter kernelspec uninstall py36 # jupyter kernel에 삭제
 ```
 
@@ -299,3 +302,11 @@ j. 새로 등록한 레지스트리 키값이 입력이 되면, Excel 프로그�
 ```
 
 from : https://answers.microsoft.com/ko-kr/office/forum/office_2010-excel/office-2010%EC%97%90%EC%84%9C/b5f473a9-f061-4097-9192-76be7031f24d
+
+#### 사용 장비 cpu, gpu현황 tensorflow
+
+```python
+from tensorflow.python.client import device_lib
+device_lib.list_local_devices()
+```
+
