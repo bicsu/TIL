@@ -117,3 +117,10 @@ N         nanoseconds
 '''
 ```
 
+#### 10. pandas specific value row deleting
+
+```python
+i = new[(new.name == '공 종')].index
+new = new.drop(i)
+```
+
