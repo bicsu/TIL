@@ -310,3 +310,13 @@ from tensorflow.python.client import device_lib
 device_lib.list_local_devices()
 ```
 
+#### Jupyter notebook extension
+
+```shell
+# conda
+$ conda install -c conda-forge jupyter_contrib_nbextensions
+$ jupyter notebook
+
+> http://localhost:8888/nbextensions 들어가서 설정 후 enable
+```
+

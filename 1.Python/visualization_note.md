@@ -193,3 +193,12 @@ sns.lineplot(x = resamples.index, y = 'item_price', data = resamples )
 plt.tight_layout()
 ````
 
+#### graph_insight
+
+```python
+def graph_insight(data):
+    print(set(data.dtypes.tolist()))
+    df_num = data.select_dtypes(include = ['float64', 'int64','O'])
+    df_num.hist(figsize=(16, 16), bins=50, xlabelsize=8, ylabelsize=8);
+```
+
