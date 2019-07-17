@@ -124,3 +124,72 @@ i = new[(new.name == '공 종')].index
 new = new.drop(i)
 ```
 
+#### 11. str.split & expanding columns with renaming
+
+```python
+df['string'].str.split(',', expand=True).rename(columns = lambda x: "string"+str(x+1))
+
+concat(sort=False, axis = 0)
+```
+
+#### 12. 시계열 분석(Seasonal ARIMA)
+
+```python
+from pyramid.arima import auto_arima
+stepwise_model = auto_arima(data, start_p=1, start_q=1,
+                           max_p=3, max_q=3, m=12,
+                           start_P=0, seasonal=True,
+                           d=1, D=1, trace=True,
+                           error_action='ignore',  
+                           suppress_warnings=True, 
+                           stepwise=True)
+print(stepwise_model.aic())
+```
+
+<https://medium.com/@josemarcialportilla/using-python-and-auto-arima-to-forecast-seasonal-time-series-90877adff03c>
+
+
+
+#### 13. Text Cleansing 
+
+```python
+def cleanText(readData):
+    #텍스트에 포함되어 있는 특수 문자 제거
+    text = re.sub('[-=+,#/\?:^$.@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'…》]', '', readData)
+    return text
+
+# string에 숫자가 있는지 확인
+def hasNumbers(inputString):
+	return any(char.isdigit() for char in inputString)
+
+```
+
+#### 14. pandas apply 활용
+
+```python
+# 두 string 컬럼을 apply를 사용해서 combine하기
+dataa['c'] = dataa[['a', 'b']].apply(lambda x: '|'.join(x), axis=1)
+```
+
+
+
+#### 15. pandas Dataframe for문 train과 test한번에 돌리기
+
+```python
+for df in [df_train,df_test]:
+    df['date'] = df['date'].apply(lambda x: x[0:8])
+    df['yr_renovated'] = df['yr_renovated'].apply(lambda x: np.nan if x == 0 else x)
+    
+```
+
+#### 16. Python Time Series Data Handling
+
+- 년월일 데이터 바꾸기
+
+```python
+#1
+train['date'] = pd.to_datetime(train['date'], dayfirst=True)
+#2
+train['date'] = pd.to_datetime(train.date,format="%d.%m.%Y")
+```
+
