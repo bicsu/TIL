@@ -320,3 +320,14 @@ $ jupyter notebook
 > http://localhost:8888/nbextensions 들어가서 설정 후 enable
 ```
 
+#### Jupyter notebook 글꼴 사이즈 바꾸기
+
+* .jupyter/custom 폴더 만들어 custom.css 만들기.
+  그 css파일 안에 아래 내용 작성
+
+  ```css
+  .CodeMirror pre {font-family: Arial; font-size: 14pt; line-height: 140%;}
+  ```
+
+  
+
