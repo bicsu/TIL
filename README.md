@@ -329,5 +329,15 @@ $ jupyter notebook
   .CodeMirror pre {font-family: Arial; font-size: 14pt; line-height: 140%;}
   ```
 
-  
+
+
+
+#### virtualenv 사용
+
+```cmd
+>> .\env\Scripts\activate #활성화
+>> virtualenv --python python3 <이름>
+```
+
+
 
