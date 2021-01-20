@@ -341,3 +341,11 @@ $ jupyter notebook
 
 
 
+#### Jupyter notebook tap does not work
+
+```cmd
+%config Completer.use_jedi = False
+```
+
+
+
